@@ -1,0 +1,129 @@
+.productList {
+  height: 100%;
+  width: 100%;
+  max-width: 1160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+
+  > .listHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 0.5rem 1.5rem;
+
+    .queryInput {    
+      .wrapper {
+        max-width: 500px;
+      }
+    }
+  }
+
+  > .productContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem;
+    min-height: 700px;
+  }
+}
+
+.product {
+  cursor: pointer;
+  border: 1px solid var(--color-bg-detail);
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  position: relative;
+  user-select: none;
+
+  svg {
+    position: absolute;
+    
+    .line {
+      stroke-dasharray: 700;
+      stroke-dashoffset: 0;
+      stroke-width: 1px;
+      fill: transparent;
+      stroke: var(--color-primary);
+      pointer-events: none;
+
+      stroke-width: 0px;
+    }
+  }
+
+  &:hover {
+    //svg .line {
+    //  animation: svgAnimation 2.5s linear forwards;
+    //}
+    border-color: var(--color-primary);
+  }
+
+  > .image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  > .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+
+    > .naming {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      > .brand {
+        font-weight: 600;
+        border-bottom: 1px solid var(--color-bg-detail);
+        padding-right: 1.5rem;
+
+        strong {
+          background-color: var(--color-primary);
+          color: white;
+        }
+      }
+
+      > .name {
+        height: 3em;
+        color: var(--color-text-2);
+
+        strong {
+          font-weight: 600;
+          background-color: var(--color-primary);
+          color: white;
+        }
+      }
+    }
+
+    > .price {
+      font-weight: 800;
+      font-size: 1.5em;
+    }
+  }
+}
+
+@keyframes svgAnimation {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+  }
+}

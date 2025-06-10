@@ -1,0 +1,12 @@
+@import "fonts";
+@import "vars";
+@import "mantine";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    font-family: "Chakra Petch", "Segoe UI", "sans serif";
+}
