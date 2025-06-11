@@ -10,3 +10,9 @@ body {
     background-color: var(--color-bg);
     font-family: "Chakra Petch", "Segoe UI", "sans serif";
 }
+
+a {
+    color: unset;
+    font-style: unset;
+    text-decoration: unset;
+}

@@ -41,3 +41,20 @@
 .mantine-Pagination-root {
   --pagination-control-radius: 0;
 }
+
+.mantine-SegmentedControl-root {
+  --sc-radius: 0;
+
+  .mantine-SegmentedControl-indicator {
+    background-color: var(--color-primary);
+    box-shadow: none;
+  }
+
+  .mantine-SegmentedControl-label[data-active=true] {
+    color: white;
+  }
+}
+
+.mantine-Button-root {
+  --button-radius: 0;
+}

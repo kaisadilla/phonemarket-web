@@ -4,17 +4,21 @@ import viteLogo from '/vite.svg';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import styles from './App.module.scss';
 import Header from './components/Header';
-import ProductList from './pages/ProductList';
+import ProductListPage from './pages/ProductList/page';
+import ProductPage from './pages/Product/page';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div className={styles.app}>
       <Header />
       <BrowserRouter>
+        <ScrollToTop />
         <div className={styles.content}>
           <Routes>
-            <Route path="/" element={"Kek"} />
-            <Route path="/products" element={<ProductList />} />
+            <Route path="/" element={<ProductListPage />} />
+            <Route path="/products" element={<ProductListPage />} />
+            <Route path="/product/:id" element={<ProductPage />} />
           </Routes>
         </div>
       </BrowserRouter>
