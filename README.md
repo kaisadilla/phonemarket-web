@@ -22,6 +22,6 @@ The testing included is just a sample test with **vitest**.
 ## Libraries
 * `mantine`: Mantine provides the project with customizable and highly polished components, such as text boxes or buttons.
 * `@tanstack/react-query`: This library provides utilities for querying external APIs, as well as cache the results of said queries (provided by the plugin `@tanstack/react-query-persist-client`).
-* `fuzzysort`: Efficient fuzzy searching library.
+* `fuzzysort`: Efficient fuzzy sort searching library.
 * `sass`: Used for styles.
 * `material-symbols`: Used for icons.
