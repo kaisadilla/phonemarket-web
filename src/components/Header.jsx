@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { useShopContext } from '../context/useShopContext';
 import styles from './Header.module.scss';
 
@@ -6,9 +7,9 @@ export default function Header() {
 
   return (
     <div className={styles.header}>
-      <div className={styles.logo}>
+      <Link className={styles.logo} to="/">
         PhoneMarket
-      </div>
+      </Link>
       <div className={styles.cartContainer}>
         <span className="material-symbols-sharp">shopping_cart</span>
         <div className={styles.label}>Cart</div>

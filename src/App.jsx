@@ -10,19 +10,19 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className={styles.app}>
-      <Header />
-      <BrowserRouter>
-        <ScrollToTop />
-        <div className={styles.content}>
-          <Routes>
-            <Route path="/" element={<ProductListPage />} />
-            <Route path="/products" element={<ProductListPage />} />
-            <Route path="/product/:id" element={<ProductPage />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <div className={styles.app}>
+        <Header />
+          <ScrollToTop />
+          <div className={styles.content}>
+            <Routes>
+              <Route path="/" element={<ProductListPage />} />
+              <Route path="/products" element={<ProductListPage />} />
+              <Route path="/product/:id" element={<ProductPage />} />
+            </Routes>
+          </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

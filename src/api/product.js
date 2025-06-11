@@ -1,5 +1,5 @@
 export async function fetchProductList () {
-  console.log("Fetch product list.");
+  console.info("REQUEST: Fetch product list.");
   const res = await fetch("https://itx-frontend-test.onrender.com/api/product");
 
   if (!res.ok) {
@@ -11,7 +11,7 @@ export async function fetchProductList () {
 }
 
 export async function fetchProduct (id) {
-  console.log("Fetch product.");
+  console.info("REQUEST: Fetch product.", id);
   const res = await fetch(
     "https://itx-frontend-test.onrender.com/api/product/" + id
   );
@@ -24,7 +24,7 @@ export async function fetchProduct (id) {
 }
 
 export async function addToCart (id, color, storage) {
-  console.log("Add to cart.", id, color, storage);
+  console.info("REQUEST: Add to cart.", id, color, storage);
   const res = await fetch('https://itx-frontend-test.onrender.com/api/cart', {
     method: 'POST',
     headers: {

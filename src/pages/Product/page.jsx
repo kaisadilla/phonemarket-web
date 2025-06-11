@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router';
 import styles from './page.module.scss';
 import { useEffect, useState } from 'react';
 import useProduct from '../../hooks/useProduct';
-import { Box, Button, ScrollArea, SegmentedControl, Tabs, Text } from '@mantine/core';
+import { Box, Button, LoadingOverlay, ScrollArea, SegmentedControl, Tabs, Text } from '@mantine/core';
 import { addToCart } from '../../api/product';
 import { useShopContext } from '../../context/useShopContext';
 
@@ -16,13 +16,15 @@ export default function ProductPage () {
   const [color, setColor] = useState("0");
 
   if (product === undefined) {
-    return <div className={styles.productPage}>loading...</div>
+    return <div className={styles.productPage}>
+      <LoadingOverlay visible={true} zIndex={90} />
+    </div>
   }
 
   return (
     <div className={styles.productPage}>
       <div className={styles.imageContainer}>
-        <Link className={styles.back} to="/products">
+        <Link className={styles.back} to="/">
           <span className="material-symbols-sharp">chevron_left</span>
           <span className={styles.label}>back</span>
         </Link>

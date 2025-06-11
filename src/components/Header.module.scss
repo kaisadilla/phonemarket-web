@@ -1,54 +1,70 @@
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
-    width: 100%;
-    height: 94px;
-    background-color: var(--color-primary);
-    flex-shrink: 0;
+  width: 100%;
+  height: 94px;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
 
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding-left: 24px;
+  align-items: center;
+  user-select: none;
+
+  > .logo {
+    font-family: "Amarante";
+    font-size: 24pt;
+    color: white;
+  }
+
+  > .cartContainer {
+    cursor: pointer;
+
+    position: absolute;
+    right: 24px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    user-select: none;
+    justify-content: center;
+    color: white;
+
+    :global(.material-symbols-sharp) {
+      font-size: 32pt;
+      padding: 8px;
+      padding-bottom: 0;
+    }
+
+    > .items {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 50%;
+      background-color: #ffae00;
+      color: black;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    justify-content: center;
+    padding-left: unset;
 
     > .logo {
-        font-family: "Amarante";
-        font-size: 48pt;
-        color: white;
+      font-size: 48pt;
     }
 
     > .cartContainer {
-        cursor: pointer;
-
-        position: absolute;
-        right: 48px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: white;
-
-        :global(.material-symbols-sharp) {
-            font-size: 32pt;
-            padding: 8px;
-            padding-bottom: 0;
-        }
-
-        > .items {
-            position: absolute;
-            top: 0;
-            right: 0;
-            border-radius: 50%;
-            background-color: #ffae00;
-            color: black;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      right: 48px;
     }
+  }
 }
