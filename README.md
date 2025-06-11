@@ -17,7 +17,7 @@ The testing included is just a sample test with **vitest**.
 * `npm start` or `npm run start`: Launches the website in dev mode.
 * `npm run build`: Builds the production build of the project, which can then be hosted as a server or run locally with a tool such as [serve](https://www.npmjs.com/package/serve).
 * `npm test`: Launches the test suite, which is implemented with vitest. Only a small test for `pages/ProductList` is provided.
-* `npm lint`: Checks the code using ESLint.
+* `npm run lint`: Checks the code using ESLint.
 
 ## Libraries
 * `mantine`: Mantine provides the project with customizable and highly polished components, such as text boxes or buttons.
