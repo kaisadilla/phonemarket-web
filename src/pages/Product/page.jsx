@@ -1,8 +1,8 @@
 import { Link, useParams } from 'react-router';
 import styles from './page.module.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import useProduct from '../../hooks/useProduct';
-import { Box, Button, LoadingOverlay, ScrollArea, SegmentedControl, Tabs, Text } from '@mantine/core';
+import { Button, LoadingOverlay, ScrollArea, SegmentedControl, Tabs, Text } from '@mantine/core';
 import { addToCart } from '../../api/product';
 import { useShopContext } from '../../context/useShopContext';
 
@@ -10,7 +10,7 @@ export default function ProductPage () {
   const { id } = useParams();
   const shopCtx = useShopContext();
 
-  const { data: product, isLoading, error } = useProduct(id);
+  const { data: product, _isLoading, _error } = useProduct(id);
 
   const [storage, setStorage] = useState("0");
   const [color, setColor] = useState("0");

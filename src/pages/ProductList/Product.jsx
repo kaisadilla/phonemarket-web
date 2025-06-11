@@ -13,7 +13,7 @@ export default function Product ({
     }
     else {
       const res = fuzzysort.single(query, product.brand);
-      return res?.highlight((m, i) => <strong>{m}</strong>) ?? product.brand;
+      return res?.highlight(m => <strong>{m}</strong>) ?? product.brand;
     }
   })();
 
@@ -23,7 +23,7 @@ export default function Product ({
     }
     else {
       const res = fuzzysort.single(query, product.model);
-      return res?.highlight((m, i) => <strong>{m}</strong>) ?? product.model;
+      return res?.highlight(m => <strong>{m}</strong>) ?? product.model;
     }
   })();
 
@@ -32,14 +32,6 @@ export default function Product ({
       className={styles.product}
       to={`/product/${product.id}`}
     >
-      {false && <svg height="100%" width="100%">
-        <rect
-          className={styles.line}
-          height="100%"
-          width="100%"
-          stroke-linejoin="round"
-        />
-      </svg>}
       <div className={styles.image}>
         <img
           src={product.imgUrl}

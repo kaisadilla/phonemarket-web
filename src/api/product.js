@@ -1,6 +1,8 @@
+const ENDPOINT_URL = import.meta.env.VITE_API_BASE_URL;
+  
 export async function fetchProductList () {
   console.info("REQUEST: Fetch product list.");
-  const res = await fetch("https://itx-frontend-test.onrender.com/api/product");
+  const res = await fetch(`${ENDPOINT_URL}/product`);
 
   if (!res.ok) {
     throw new Error("Request error. Status: " + res.status);
@@ -12,9 +14,7 @@ export async function fetchProductList () {
 
 export async function fetchProduct (id) {
   console.info("REQUEST: Fetch product.", id);
-  const res = await fetch(
-    "https://itx-frontend-test.onrender.com/api/product/" + id
-  );
+  const res = await fetch(`${ENDPOINT_URL}/product/${id}`);
 
   if (!res.ok) {
     throw new Error("Request error. Status: " + res.status);
@@ -25,7 +25,7 @@ export async function fetchProduct (id) {
 
 export async function addToCart (id, color, storage) {
   console.info("REQUEST: Add to cart.", id, color, storage);
-  const res = await fetch('https://itx-frontend-test.onrender.com/api/cart', {
+  const res = await fetch(`${ENDPOINT_URL}/cart`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -1,14 +1,18 @@
-import { Pagination, Text, TextInput } from '@mantine/core';
+import { LoadingOverlay, Pagination, TextInput } from '@mantine/core';
 import styles from './page.module.scss';
 import { useEffect, useState } from 'react';
 import fuzzysort from 'fuzzysort';
 import Product from './Product';
 import useProductList from '../../hooks/useProductList';
+import { useMediaQuery } from '@mantine/hooks';
 
 export default function ProductListPage () {
   const ITEMS_PER_PAGE = 8;
 
-  const { data: products, isLoading, error } = useProductList();
+  const isPhone = useMediaQuery('(max-width: 767px)');
+  console.log("is phone" , isPhone);
+
+  const { data: products, isLoading, _error } = useProductList();
 
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -51,6 +55,14 @@ export default function ProductListPage () {
     setCurrentPage(1);
   }, [products, query]);
 
+  if (isLoading) {
+    return (
+      <div className={styles.productListPage}>
+        <LoadingOverlay visible={true} zIndex={90} />
+      </div>
+    )
+  }
+
   return (
     <div className={styles.productListPage}>
       <div className={styles.listHeader}>
@@ -65,18 +77,18 @@ export default function ProductListPage () {
         />
       </div>
       <div className={styles.productContainer}>
-        {
-          getItemsInPage(currentPage)
-            .map(p => <Product key={p.id} product={p} query={query} />)
-        }
-                
-        {false && products.map(p => <div key={p.id}>{p.model}</div>)}
+        {getItemsInPage(currentPage).map(p => <Product
+          key={p.id}
+          product={p}
+          query={query}
+        />)}
       </div>
       <div className={styles.paginationContainer}>
         <Pagination
           total={pageCount}
           value={currentPage}
           onChange={setCurrentPage}
+          siblings={isPhone ? 0 : 1}
         />
       </div>
     </div>

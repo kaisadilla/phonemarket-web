@@ -31,4 +31,17 @@
     padding: 1rem;
     min-height: 700px;
   }
+
+  > .paginationContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .productListPage {
+    > .paginationContainer {
+      justify-content: start;
+    }
+  }
 }
