@@ -10,7 +10,6 @@ export default function ProductListPage () {
   const ITEMS_PER_PAGE = 8;
 
   const isPhone = useMediaQuery('(max-width: 767px)');
-  console.log("is phone" , isPhone);
 
   const { data: products, isLoading, _error } = useProductList();
 

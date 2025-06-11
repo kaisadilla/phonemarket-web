@@ -4,67 +4,76 @@
   z-index: 100;
 
   width: 100%;
-  height: 94px;
-  background-color: var(--color-primary);
   flex-shrink: 0;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  padding-left: 24px;
-  align-items: center;
-  user-select: none;
-
-  > .logo {
-    font-family: "Amarante";
-    font-size: 24pt;
-    color: white;
-  }
-
-  > .cartContainer {
-    cursor: pointer;
-
-    position: absolute;
-    right: 24px;
+  > .top {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 24px;
     align-items: center;
-    justify-content: center;
-    color: white;
+    user-select: none;
+    height: 94px;
+    background-color: var(--color-primary);
 
-    :global(.material-symbols-sharp) {
-      font-size: 32pt;
-      padding: 8px;
-      padding-bottom: 0;
+    > .logo {
+      font-family: "Amarante";
+      font-size: 24pt;
+      color: white;
     }
 
-    > .items {
+    > .cartContainer {
+      cursor: pointer;
+
       position: absolute;
-      top: 0;
-      right: 0;
-      border-radius: 50%;
-      background-color: #ffae00;
-      color: black;
-      width: 24px;
-      height: 24px;
+      right: 24px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      color: white;
+
+      :global(.material-symbols-sharp) {
+        font-size: 32pt;
+        padding: 8px;
+        padding-bottom: 0;
+      }
+
+      > .items {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+        background-color: #ffae00;
+        color: black;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
+  }
+
+  > .breadcrumbs {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-bg);
   }
 }
 
 @media (min-width: 768px) {
   .header {
-    justify-content: center;
-    padding-left: unset;
+    > .top {
+      justify-content: center;
+      padding-left: unset;
 
-    > .logo {
-      font-size: 48pt;
-    }
+      > .logo {
+        font-size: 48pt;
+      }
 
-    > .cartContainer {
-      right: 48px;
+      > .cartContainer {
+        right: 48px;
+      }
     }
   }
 }

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import ProductListPage from './pages/ProductList/page';
 import ProductPage from './pages/Product/page';
 import ScrollToTop from './components/ScrollToTop';
+import NotFoundPage from './pages/NotFound/page';
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
           <div className={styles.content}>
             <Routes>
               <Route path="/" element={<ProductListPage />} />
-              <Route path="/products" element={<ProductListPage />} />
+              <Route path="/product" element={<ProductListPage />} />
               <Route path="/product/:id" element={<ProductPage />} />
+              <Route path="/*" element={<NotFoundPage />} />
             </Routes>
           </div>
       </div>

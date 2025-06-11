@@ -1,13 +1,17 @@
 # PhoneMarket
 
 ## Introduction
-This project is a sample project for the technical test for a front-end application for Nunegal. This project has been developed with React and JavaScript, using Vite as a build tool.
+This project is a sample project for the technical test for a front-end application for Nunegal. This project has been developed with **React** and **JavaScript**, using **Vite** as a build tool.
 
 For convenience, the query functions used to connect to the external API include console logs to help track when an API call occurs and when data is fetched from the cache.
 
 The project has been built assuming the external API will be up, although loading times are handled gracefully regardless of connection speed.
 
 During development, the endpoint `api/cart` has always returned `1` regardless of the amount of items added through it, which is why, while testing this project, you may see that the amount of items is always equal to `1` in the front-end. The logic for this component works correctly and would display any other number if `api/cart` returned so.
+
+This project has been developed with a mobile-first philosophy, taking some liberties in the phone view to adapt the proposed layouts to a mobile-friendly experience.
+
+The testing included is just a sample test with **vitest**.
 
 ## How to run
 * `npm start` or `npm run start`: Launches the website in dev mode.
